@@ -4,7 +4,7 @@ using Receipt;
 namespace ReceiptTests
 {
     [TestClass]
-    public class ProductTestsf
+    public class ProductTests
     {
         [TestMethod]
         public void Constructor_NewProduct_PropertyValuesAreExpected()
