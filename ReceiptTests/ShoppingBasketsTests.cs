@@ -12,7 +12,7 @@ namespace ReceiptTests
             ShoppingBaskets shoppingBasket = new ShoppingBaskets();
             Product book = new Product("book", 12.49, false, false);
 
-            shoppingBasket.AddProduct(book, 1);
+            shoppingBasket.AddProduct(book);
 
             double expected = 0.0;
             double actual = shoppingBasket.SalesTaxes;
@@ -26,7 +26,7 @@ namespace ReceiptTests
             ShoppingBaskets shoppingBaskets = new ShoppingBaskets();
             Product musicCD = new Product("music CD", 14.99, true, false);
 
-            shoppingBaskets.AddProduct(musicCD, 1);
+            shoppingBaskets.AddProduct(musicCD);
 
             double expected = 1.5;
             double actual = shoppingBaskets.SalesTaxes;
@@ -40,7 +40,7 @@ namespace ReceiptTests
             ShoppingBaskets shoppingBaskets = new ShoppingBaskets();
             Product importedChocolate = new Product("box of chocolate", 10.0, false, true);
 
-            shoppingBaskets.AddProduct(importedChocolate, 1);
+            shoppingBaskets.AddProduct(importedChocolate);
 
             double expected = 0.5;
             double actual = shoppingBaskets.SalesTaxes;
@@ -54,7 +54,7 @@ namespace ReceiptTests
             ShoppingBaskets shoppingBaskets = new ShoppingBaskets();
             Product importedPerfume = new Product("bottle of perfume", 47.5, true, true);
 
-            shoppingBaskets.AddProduct(importedPerfume, 1);
+            shoppingBaskets.AddProduct(importedPerfume);
 
             double expected = 7.15;
             double actual = shoppingBaskets.SalesTaxes;
@@ -68,7 +68,7 @@ namespace ReceiptTests
             ShoppingBaskets shoppingBaskets = new ShoppingBaskets();
             Product importedChocolate = new Product("imported box of chocolate", 11.25, false, true);
 
-            shoppingBaskets.AddProduct(importedChocolate, 1);
+            shoppingBaskets.AddProduct(importedChocolate);
 
             double expected = 0.6;
             double actual = shoppingBaskets.SalesTaxes;

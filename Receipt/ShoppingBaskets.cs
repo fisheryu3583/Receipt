@@ -1,17 +1,43 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace Receipt
 {
     public class ShoppingBaskets
     {
-        public double SalesTaxes { get; }
+        private List<ShoppingBaseketsItem> _items { get; set; } = new List<ShoppingBaseketsItem>();
 
-        public ShoppingBaskets()
+        private double _basicSalesTaxes
         {
+            get
+            {
+                double basicSalesTaxes = 0.0;
+                _items.ForEach((item) => basicSalesTaxes += item.BasicSalesTaxes);
+                return basicSalesTaxes;
+            }
+        }
+        private double _ImportTaxes
+        {
+            get
+            {
+                double importTaxes = 0.0;
+                _items.ForEach((item) => importTaxes += item.ImportTaxes);
+                return importTaxes;
+            }
         }
 
-        public void AddProduct(Product product, int count)
+        public double SalesTaxes
         {
-            throw new NotImplementedException();
+            get
+            {
+                return _basicSalesTaxes + _ImportTaxes;
+            }
+        }
+
+        public void AddProduct(Product product)
+        {
+            ShoppingBaseketsItem item = new ShoppingBaseketsItem(product);
+            _items.Add(item);
         }
     }
 }
