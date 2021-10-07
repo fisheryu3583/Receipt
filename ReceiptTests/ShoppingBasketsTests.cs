@@ -75,5 +75,19 @@ namespace ReceiptTests
 
             Assert.AreEqual(expected, actual, message: "Incorrect rounded sales taxes");
         }
+
+        [TestMethod]
+        public void AddProduct_WhenAddingProductWithSalesTaxes_TotalIsCalculatedForBothPriceAndSalesTaxes()
+        {
+            ShoppingBaskets shoppingBaskets = new ShoppingBaskets();
+            Product importedPerfume = new Product("bottle of perfume", 47.5, true, true);
+
+            shoppingBaskets.AddProduct(importedPerfume);
+
+            double expected = 54.65;
+            double actual = shoppingBaskets.Total;
+
+            Assert.AreEqual(expected, actual, message: "Incorrect calculation of sales tax and import tax for a import basic product");
+        }
     }
 }
