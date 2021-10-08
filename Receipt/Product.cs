@@ -1,13 +1,7 @@
-﻿using System;
-namespace Receipt
+﻿namespace Receipt
 {
     public class Product
     {
-        public string Name { get; }
-        public double Price { get; }
-        public bool IsBasic { get; }
-        public bool IsImport { get; }
-
         public Product(string name, double price, bool isBasic, bool isImport)
         {
             Name = name;
@@ -15,5 +9,10 @@ namespace Receipt
             IsBasic = isBasic;
             IsImport = isImport;
         }
+
+        public string Name { get; }
+        public double Price { get; }
+        public bool IsBasic { get; }
+        public bool IsImport { get; }
     }
 }

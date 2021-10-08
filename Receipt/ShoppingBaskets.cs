@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Receipt
 {
@@ -14,6 +13,7 @@ namespace Receipt
                 return basicSalesTaxes;
             }
         }
+
         private double _ImportTaxes
         {
             get
